@@ -14,7 +14,7 @@ async function getData() {
 }
 
 const About = async () => {
-  await getData()
+  // await getData()
   return <div>About</div>
 }
 
