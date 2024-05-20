@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
+import Header from '@/components/layout/header'
 import './globals.css'
-import Link from 'next/link'
+import Footer from '@/components/layout/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,26 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <header className='bg-gray-100 p-4'>
-          <nav>
-            <ul>
-              <li>
-                <Link href='/'>Home</Link>
-              </li>
-              <li>
-                <Link href='/about'>About</Link>
-              </li>
-              <li>
-                <Link href='/about/team'>Team</Link>
-              </li>
-              <li>
-                <Link href='/contact'>Contact</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         {children}
-        <footer>© {new Date().getFullYear()} NextJS starter</footer>
+        <Footer />
       </body>
     </html>
   )
