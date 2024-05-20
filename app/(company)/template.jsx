@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import NavLink from '../components/ui/NavLink'
 import { motion } from 'framer-motion'
 
-const CompanyLayout = ({ children }) => {
+const CompanyTemplate = ({ children }) => {
   useEffect(() => {
     console.log('%crendere layout', 'color:red;font-size:50px')
   }, [])
@@ -50,4 +50,4 @@ const CompanyLayout = ({ children }) => {
   )
 }
 
-export default CompanyLayout
+export default CompanyTemplate
