@@ -16,6 +16,9 @@ const Header = () => {
           <li>
             <NavLink href='/posts'>Blog</NavLink>
           </li>
+          <li>
+            <NavLink href='/guestbook'>Guest Book</NavLink>
+          </li>
           <ContactButton />
         </ul>
         <ThemeButton />
