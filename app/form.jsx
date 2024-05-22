@@ -1,10 +1,9 @@
 'use client'
 import { useFormState, useFormStatus } from 'react-dom'
-import { addEntry } from './_actions'
+import { addEntryNew } from './_actions'
 
 const Form = () => {
-  const [state, fromAction] = useFormState(addEntry, null)
-  const stauts = useFormStatus
+  const [state, fromAction] = useFormState(addEntryNew, null)
   return (
     <section className='flex gap-6'>
       <form action={fromAction} className='flex flex-1 flex-col gap-4 sm:w-1/2'>
