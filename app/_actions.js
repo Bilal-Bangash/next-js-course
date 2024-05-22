@@ -3,7 +3,7 @@
 import { createGuestBookEntry } from '@/lib/mongo/guestbook'
 import { GuestEntrySchema } from '@/lib/schema'
 import { revalidatePath } from 'next/cache'
-export async function addEntry_old(data) {
+export async function addEntry(data) {
   const { name, message } = Object.fromEntries(data)
   //   if (!name || !message) throw new Error('Name and message are required')
   const { error: zodError } = GuestEntrySchema.safeParse({ name, message })
@@ -19,7 +19,7 @@ export async function addEntry_old(data) {
   revalidatePath('/guestbook')
 }
 
-export async function addEntry(state, formData) {
+export async function addEntryNew(state, formData) {
   const result = GuestEntrySchema.safeParse({
     name: formData.get('name'),
     message: formData.get('message')
