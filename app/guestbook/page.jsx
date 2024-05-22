@@ -2,7 +2,8 @@ import { getGuestBookEntries } from '@/lib/mongo/guestbook'
 import GuestBookEntryForm from '../components/GuestBookEntryForm'
 
 // export const dynamic = 'force-dynamic'
-export const dynamic = 'auto'
+// export const dynamic = 'auto'
+export const revalidate = 60
 async function getData() {
   const { entries, error } = await getGuestBookEntries()
   if (!entries || error) throw new Error('Failed to fetch guestbook entries')
