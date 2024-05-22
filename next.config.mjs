@@ -4,6 +4,11 @@ const nextConfig = {
   // experimental: {
   //   serverActions: true
   // }
+  images: {
+    domains: ['fastly.picsum.photos']
+    // loader: 'custom',
+    // loaderFile: './loader.js'
+  }
 }
 
 export default nextConfig
