@@ -5,6 +5,19 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import Image from 'next/image'
 import BlogHeaderImage from '@/app/components/BlogHeaderImage'
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  const { slug } = params
+  const { frontmatter } = await getPostBySlug(slug[0])
+
+  const previousImages = (await parent).openGraph?.images || []
+
+  return {
+    title: frontmatter.title,
+    author: frontmatter.author,
+    description: frontmatter.description
+  }
+}
+
 export async function generateStaticParams() {
   const posts = await getAllPosts()
   return posts.map(post => ({
