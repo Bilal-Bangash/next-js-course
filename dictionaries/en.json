@@ -1,0 +1,21 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "page": {
+    "home": {
+      "title": "Home",
+      "description": "This is the home page"
+    },
+    "about": {
+      "title": "About",
+      "description": "This is the about page"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "This is the contact page"
+    }
+  }
+}
