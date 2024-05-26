@@ -5,7 +5,8 @@ import Negotiator from 'negotiator'
 import { chain } from '@/middlewares/chain'
 import { withMiddleware1 } from '@/middlewares/middleware1'
 import { withMiddleware2 } from '@/middlewares/middleware2'
-export { default } from 'next-auth/middleware'
+import { withAuth } from 'next-auth/middleware'
+// export { default } from 'next-auth/middleware'
 
 function getLocale(request) {
   const negotiateHeaders = {}
@@ -102,6 +103,17 @@ function getLocale(request) {
 //   matcher: '/api/test'
 // }
 
+export default withAuth({
+  callbacks: {
+    authorized({ req, token }) {
+      if (req.nextUrl.pathname === '/admin') {
+        return token?.role === 'admin'
+      }
+      return !!token
+    }
+  }
+})
+
 export const config = {
-  matcher: ['/protected/:path*']
+  matcher: ['/admin', '/profile', '/protected/:path*']
 }

@@ -24,7 +24,10 @@ const EmailSignInForm = ({ callbackUrl }) => {
     }
 
     // Send sign in email
-    signIn('email', { email, callbackUrl })
+    // signIn('resend', { email, callbackUrl })
+
+    // resend email
+    signIn('resend', { email, callbackUrl })
   }
   return (
     <form noValidate onSubmit={handleSubmit}>
