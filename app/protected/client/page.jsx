@@ -2,7 +2,7 @@
 import { useSession } from 'next-auth/react'
 
 const ClientProtectedPage = () => {
-  const { data: session } = useSession({ required: true })
+  const { data: session } = useSession()
   return (
     <section className='py-24'>
       <div className='container'>
