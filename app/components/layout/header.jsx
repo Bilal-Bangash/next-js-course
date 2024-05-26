@@ -1,5 +1,6 @@
 import ContactButton from '../ui/ContactButton'
 import NavLink from '../ui/NavLink'
+import SignInButton from '../ui/SignInButton'
 import ThemeButton from '../ui/ThemeButton'
 
 const Header = () => {
@@ -21,7 +22,10 @@ const Header = () => {
           </li>
           <ContactButton />
         </ul>
-        <ThemeButton />
+        <div className='flex items-center gap-4'>
+          <ThemeButton />
+          <SignInButton />
+        </div>
       </nav>
     </header>
   )

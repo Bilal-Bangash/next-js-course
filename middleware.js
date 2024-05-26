@@ -5,6 +5,7 @@ import Negotiator from 'negotiator'
 import { chain } from '@/middlewares/chain'
 import { withMiddleware1 } from '@/middlewares/middleware1'
 import { withMiddleware2 } from '@/middlewares/middleware2'
+export { default } from 'next-auth/middleware'
 
 function getLocale(request) {
   const negotiateHeaders = {}
@@ -91,12 +92,16 @@ function getLocale(request) {
 //   await middleware1(request)
 //   await middleware2(request)
 // }
-const middlewares = [withMiddleware1, withMiddleware2]
-export default chain(middlewares)
-export const config = {
-  matcher: '/((?!api|_next/static|_next/image|favicon.ico).*)'
-}
+// const middlewares = [withMiddleware1, withMiddleware2]
+// export default chain(middlewares)
+// export const config = {
+//   matcher: '/((?!api|_next/static|_next/image|favicon.ico).*)'
+// }
 
 // export const config = {
 //   matcher: '/api/test'
 // }
+
+export const config = {
+  matcher: ['/protected/:path*']
+}
