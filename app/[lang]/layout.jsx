@@ -16,7 +16,7 @@ const RootLayout = ({ children, params }) => {
   return (
     <html lang={params.lang}>
       <body className={inter.className}>
-        <Header lang={params.lang} />
+        {/* <Header lang={params.lang} /> */}
         <main>{children}</main>
       </body>
     </html>

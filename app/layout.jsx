@@ -4,6 +4,7 @@ import Header from '@/components/layout/header'
 // import Footer from '@/components/layout/footer'
 import Providers from './providers'
 import './globals.css'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -34,14 +35,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={`${roboto.className} ${playfairDisplay.variable}`}>
-        <Providers>
-          <Header />
-          {children}
-          {/* <Footer /> */}
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en' suppressHydrationWarning>
+        <body className={`${roboto.className} ${playfairDisplay.variable}`}>
+          <Providers>
+            <Header />
+            {children}
+            {/* <Footer /> */}
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
