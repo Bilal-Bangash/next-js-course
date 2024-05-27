@@ -5,7 +5,7 @@ import Negotiator from 'negotiator'
 import { chain } from '@/middlewares/chain'
 import { withMiddleware1 } from '@/middlewares/middleware1'
 import { withMiddleware2 } from '@/middlewares/middleware2'
-export { default } from 'next-auth/middleware'
+// export { default } from 'next-auth/middleware'
 
 function getLocale(request) {
   const negotiateHeaders = {}
@@ -102,6 +102,16 @@ function getLocale(request) {
 //   matcher: '/api/test'
 // }
 
+// export const config = {
+//   matcher: ['/protected/:path*']
+// }
+
+import { clerkMiddleware } from '@clerk/nextjs/server'
+
+export default clerkMiddleware({
+  publicRoutes: ['/']
+})
+
 export const config = {
-  matcher: ['/protected/:path*']
+  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)']
 }
