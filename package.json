@@ -1,5 +1,6 @@
 {
   "name": "next-js-course-pratice",
+  "description": "Next.js course practice",
   "version": "0.1.0",
   "private": true,
   "scripts": {
